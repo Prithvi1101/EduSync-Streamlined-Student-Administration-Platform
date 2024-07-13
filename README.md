@@ -10,7 +10,7 @@ making it more accessible and efficient for all users. This platform will enable
 communication, data management, and reporting capabilities.
 
 Instructions:
-1. Zip, download and unzip
-2. Change pw and db_name in the DB_Connection.php file
-3. Create tables according to the sql table query file
+1. Zip, download and unzip.
+2. Change pw and db_name in the DB_Connection.php file.
+3. Create tables according to the sql table query file.
 Also, I used XAMPP for this project, you can also use phpstorm if you want.
