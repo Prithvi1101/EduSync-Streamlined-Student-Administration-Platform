@@ -1,0 +1,70 @@
+-- Students Table
+CREATE TABLE Students (
+    Student_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Student_Name VARCHAR(255) NOT NULL,
+    Enrollment_Status VARCHAR(100) NOT NULL
+);
+
+-- Courses Table
+CREATE TABLE Courses (
+    Course_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Course_Name VARCHAR(255) NOT NULL,
+    Course_Details TEXT,
+    Department VARCHAR(255)
+);
+
+-- Faculties Table
+CREATE TABLE Faculties (
+    Faculty_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Faculty_Name VARCHAR(255) NOT NULL,
+    Department VARCHAR(255),
+    Email_ID VARCHAR(255),
+    Phone_Number VARCHAR(255)
+);
+
+CREATE TABLE examinations (
+    Exam_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Exam_Name VARCHAR(255) NOT NULL,
+    Room_ID VARCHAR(255),
+    Semester VARCHAR(255),
+    Course_ID INT,
+    Schedule DATETIME,
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+
+-- Marks Table
+CREATE TABLE Marks (
+    Marks_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Exam_ID INT,
+    Course_ID INT,
+    Total_Marks INT,
+    Obtained_Marks INT,
+    Student_ID INT,
+    FOREIGN KEY (Exam_ID) REFERENCES Examinations(Exam_ID),
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID),
+    FOREIGN KEY (Student_ID) REFERENCES Students(Student_ID)
+);
+
+-- Enrollment Status Table
+CREATE TABLE Enrollment_Status (
+    Enrollment_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Student_ID INT,
+    Course_ID INT,
+    Semester VARCHAR(255),
+    FOREIGN KEY (Student_ID) REFERENCES Students(Student_ID),
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+-- Attendance Table
+CREATE TABLE Attendance (
+    Attendance_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Student_ID INT,
+    Course_ID INT,
+    Timestamp DATETIME,
+    Status VARCHAR(100), -- 'Present' or 'Absent'
+    FOREIGN KEY (Student_ID) REFERENCES Students(Student_ID),
+    FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+
