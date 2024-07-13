@@ -2,8 +2,8 @@
 	
 	$host ="localhost";
 	$user="root";
-	$password="root1101";
-	$db_name="dbms_project";
+	$password="your mysql pw here";
+	$db_name="your database name here";
 	
 	$con=mysqli_connect($host,$user,$password,$db_name);
 	if(mysqli_connect_errno()){
