@@ -9,6 +9,8 @@ effectiveness of the institution's operations. EduSync aims to improve the curre
 making it more accessible and efficient for all users. This platform will enable better 
 communication, data management, and reporting capabilities.
 
+Did I mention that this was the best project among all other projects in the entire course?
+
 Instructions:
 1. Zip, download and unzip.
 2. Change pw and db_name in the DB_Connection.php file.
